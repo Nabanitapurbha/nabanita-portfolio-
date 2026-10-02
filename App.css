@@ -1,0 +1,1290 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --pink: #f58aaa;
+  --darkPink: #df547c;
+  --cream: #fff9f5;
+  --paper: #fffdf9;
+  --black: #171417;
+  --text: #30282d;
+  --muted: #776d72;
+  --border: #e8d9dc;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* APP */
+
+.app {
+  min-height: 100vh;
+  background: var(--cream);
+  transition: 0.3s;
+}
+
+.app.dark {
+  --cream: #171417;
+  --paper: #211d20;
+  --text: #fff5f7;
+  --muted: #c9b8be;
+  --border: #40353a;
+}
+
+/* LEFT SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 235px;
+  height: 100vh;
+  background: #181419;
+  color: white;
+  padding: 28px 22px;
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-right: 3px solid #2b252a;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--pink);
+  border-radius: 20px;
+}
+
+.sideLogo {
+  border-bottom: 1px dashed #66535b;
+  padding-bottom: 20px;
+}
+
+.sideLogo h1 {
+  font-family: "Caveat", cursive;
+  color: #ff8fb2;
+  font-size: 39px;
+  transform: rotate(-3deg);
+}
+
+.sideLogo p {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #bcaeb4;
+  margin-top: 5px;
+}
+
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 22px;
+}
+
+.sideMenu a {
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #d9cdd1;
+  transition: 0.25s;
+}
+
+.sideMenu a:hover {
+  background: #ff86aa;
+  color: #191419;
+  transform: translateX(4px);
+}
+
+.sideQuote {
+  margin: 20px 0 10px;
+  padding: 15px 10px;
+  border-top: 1px dashed #6a5961;
+  border-bottom: 1px dashed #6a5961;
+  text-align: center;
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  line-height: 1.05;
+}
+
+.sideQuote span {
+  display: block;
+  color: #f8d7df;
+}
+
+.sideQuote b {
+  color: #ff7fa7;
+  display: block;
+}
+
+/* GIRL IMAGE */
+
+.sideGirl {
+  position: relative;
+  width: 100%;
+  height: 145px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0 8px;
+}
+
+.sideGirl img {
+  width: 125px;
+  height: 145px;
+  object-fit: contain;
+  filter: saturate(0.85);
+  position: relative;
+  z-index: 2;
+}
+
+.girlFlower {
+  position: absolute;
+  color: #ff82aa;
+  font-size: 25px;
+  font-family: "Caveat", cursive;
+  z-index: 3;
+}
+
+.flowerA {
+  left: 15px;
+  top: 18px;
+  transform: rotate(-15deg);
+}
+
+.flowerB {
+  right: 13px;
+  bottom: 15px;
+  transform: rotate(15deg);
+  color: #ffd2df;
+}
+
+.sideLearning {
+  border-top: 1px dashed #66535b;
+  padding-top: 15px;
+  margin-top: 8px;
+}
+
+.sideLearning strong {
+  color: #ff91b4;
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+}
+
+.sideLearning p {
+  font-size: 10px;
+  color: #bcaeb4;
+  margin-top: 5px;
+}
+
+.sideFollow {
+  margin-top: 20px;
+  border-top: 1px dashed #66535b;
+  padding-top: 15px;
+}
+
+.sideFollow p {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #ff91b4;
+}
+
+.sideFollow span {
+  display: block;
+  font-size: 9px;
+  color: #bcaeb4;
+  margin-top: 7px;
+}
+
+.sideFlower {
+  color: #ff79a3;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 15px;
+  opacity: 0.8;
+}
+
+/* MAIN */
+
+main {
+  margin-left: 235px;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 70px;
+  background: rgba(255, 253, 249, 0.94);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  padding: 0 55px;
+  z-index: 50;
+  border-bottom: 1px solid var(--border);
+}
+
+.dark .navbar {
+  background: rgba(33, 29, 32, 0.94);
+}
+
+.navbar nav {
+  display: flex;
+  gap: 26px;
+}
+
+.navbar nav a {
+  font-size: 12px;
+  font-weight: 600;
+  position: relative;
+}
+
+.navbar nav a:first-child {
+  color: var(--darkPink);
+}
+
+.navbar nav a:hover {
+  color: var(--darkPink);
+}
+
+.darkBtn,
+.menuBtn {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.darkBtn {
+  color: var(--darkPink);
+}
+
+.menuBtn,
+.mobileLogo {
+  display: none;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 70px 8%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 75% 20%, #ffd8e2 0 12%, transparent 30%),
+    #fffaf7;
+}
+
+.dark .hero {
+  background: #211d20;
+}
+
+.paperBlob {
+  position: absolute;
+  background: #ffdce5;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.blob1 {
+  width: 360px;
+  height: 180px;
+  right: -80px;
+  bottom: 10px;
+  transform: rotate(-12deg);
+}
+
+.blob2 {
+  width: 240px;
+  height: 120px;
+  left: 30%;
+  top: 25px;
+  transform: rotate(10deg);
+  opacity: 0.3;
+}
+
+.heroText {
+  width: 52%;
+  position: relative;
+  z-index: 3;
+}
+
+.hi {
+  font-family: "Caveat", cursive;
+  color: #71666b;
+  font-size: 25px;
+  transform: rotate(-4deg);
+}
+
+.heroText h1 {
+  font-family: "Caveat", cursive;
+  font-size: clamp(55px, 6vw, 92px);
+  line-height: 0.85;
+  color: #242024;
+  margin: 8px 0 22px;
+  transform: rotate(-2deg);
+}
+
+.dark .heroText h1 {
+  color: white;
+}
+
+.heroText h1 span {
+  display: block;
+  color: #e85883;
+  margin-left: 45px;
+}
+
+.heroText h3 {
+  font-size: 14px;
+  color: #54494e;
+  margin-bottom: 15px;
+}
+
+.dark .heroText h3 {
+  color: #dbcbd0;
+}
+
+.heroIntro {
+  max-width: 520px;
+  color: #756a70;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.heroButtons {
+  margin-top: 25px;
+  display: flex;
+  gap: 12px;
+}
+
+.heroButtons a {
+  padding: 12px 20px;
+  border-radius: 30px;
+  background: #e96b91;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 4px 5px 0 #f5c3d1;
+}
+
+.heroButtons a:nth-child(2) {
+  background: transparent;
+  color: #e05d86;
+  border: 1px solid #e58aa5;
+  box-shadow: none;
+}
+
+/* PHOTO AREA */
+
+.photoArea {
+  position: relative;
+  width: 40%;
+  min-height: 440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.photoFrame {
+  width: 280px;
+  height: 345px;
+  background: white;
+  padding: 13px;
+  box-shadow: 10px 12px 0 #f6c3d1;
+  transform: rotate(4deg);
+  position: relative;
+  z-index: 3;
+}
+
+.photoFrame::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid #e9d4da;
+  pointer-events: none;
+}
+
+.photoFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TAPE */
+
+.tape {
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  width: 105px;
+  height: 32px;
+  background: rgba(247, 184, 203, 0.75);
+  transform: translateX(-50%) rotate(-8deg);
+  z-index: 5;
+}
+
+/* FLOWERS BESIDE PHOTO */
+
+.photoFlower {
+  position: absolute;
+  z-index: 6;
+  color: #e76b91;
+  font-family: "Caveat", cursive;
+}
+
+.photoFlower span {
+  display: block;
+  font-size: 52px;
+}
+
+.photoFlower i {
+  display: block;
+  font-style: normal;
+  font-size: 34px;
+}
+
+.photoFlower b {
+  display: block;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.flowerLeft {
+  left: 5px;
+  bottom: 85px;
+  transform: rotate(-13deg);
+}
+
+.flowerRight {
+  right: 8px;
+  top: 115px;
+  transform: rotate(12deg);
+}
+
+.dreamText {
+  position: absolute;
+  right: -20px;
+  bottom: 45px;
+  font-family: "Caveat", cursive;
+  color: #df5d83;
+  font-size: 31px;
+  line-height: 0.8;
+  transform: rotate(8deg);
+  z-index: 7;
+}
+
+.doodle {
+  position: absolute;
+  color: #ed7296;
+  font-size: 25px;
+}
+
+.d1 {
+  right: 35px;
+  top: 70px;
+}
+
+.d2 {
+  left: 35px;
+  top: 150px;
+}
+
+.d3 {
+  right: 70px;
+  bottom: 100px;
+}
+
+/* COMMON SECTION */
+
+.section {
+  padding: 90px 8%;
+  background: var(--paper);
+}
+
+.sectionTitle small,
+.contact small,
+.shirtInfo small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #df6a8b;
+  font-weight: 700;
+}
+
+.sectionTitle h2,
+.shirtInfo h2,
+.contact h2 {
+  font-family: "Caveat", cursive;
+  font-size: 58px;
+  margin-top: 8px;
+  line-height: 1;
+}
+
+.sectionTitle h2 span,
+.shirtInfo h2 span,
+.contact h2 span {
+  color: #e35d85;
+}
+
+/* ABOUT */
+
+.about {
+  background:
+    radial-gradient(circle at 90% 20%, #ffe5eb 0 10%, transparent 25%),
+    var(--paper);
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 45px;
+}
+
+.aboutText {
+  border-left: 4px solid #f39ab3;
+  padding-left: 25px;
+}
+
+.aboutText p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.personality {
+  background: #fff1f5;
+  padding: 25px;
+  border: 1px dashed #e6a3b6;
+  transform: rotate(1deg);
+}
+
+.dark .personality {
+  background: #2a2327;
+}
+
+.personality h3 {
+  font-family: "Caveat", cursive;
+  font-size: 30px;
+  color: #e55e84;
+}
+
+.personalityItems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.personalityItems div {
+  text-align: center;
+}
+
+.personalityItems strong {
+  display: block;
+  font-size: 30px;
+}
+
+.personalityItems b {
+  display: block;
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+.personalityItems p {
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* SKILLS */
+
+.skills {
+  background: #191619;
+  color: white;
+  padding: 85px 8%;
+  position: relative;
+  overflow: hidden;
+}
+
+.darkTitle h2 {
+  color: white;
+}
+
+.darkTitle small {
+  color: #ff8daf;
+}
+
+.skillIntro {
+  color: #bcb0b6;
+  margin-top: 15px;
+  max-width: 550px;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.skillBoard {
+  max-width: 820px;
+  margin: 45px auto 25px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.skillBox {
+  min-height: 100px;
+  border: 1px dashed #755e67;
+  background: #241f23;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.25s;
+}
+
+.skillBox:hover {
+  transform: translateY(-7px) rotate(-2deg);
+  border-color: #ff7fa5;
+  background: #30262b;
+}
+
+.skillBox strong {
+  font-size: 27px;
+}
+
+.skillBox span {
+  font-size: 11px;
+  color: #eadde1;
+}
+
+.deskDecor {
+  text-align: center;
+  color: #f27b9c;
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+}
+
+/* PROJECTS */
+
+.projects {
+  background: #fffaf7;
+}
+
+.dark .projects {
+  background: #211d20;
+}
+
+.realProjects {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 7px 14px;
+  background: #ffe1e9;
+  color: #d75c81;
+  font-size: 10px;
+  transform: rotate(-2deg);
+}
+
+.projectGrid {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.projectCard {
+  position: relative;
+  background: #fff;
+  padding: 10px 10px 20px;
+  border: 1px solid #ecdde1;
+  box-shadow: 5px 7px 0 #f5dce3;
+  transition: 0.25s;
+}
+
+.dark .projectCard {
+  background: #2a2528;
+  border-color: #493d42;
+  box-shadow: 5px 7px 0 #171417;
+}
+
+.projectCard:hover {
+  transform: translateY(-8px) rotate(-1deg);
+}
+
+.pin {
+  position: absolute;
+  right: 13px;
+  top: 7px;
+  color: #ec6d92;
+  font-size: 12px;
+  z-index: 4;
+}
+
+.projectImage {
+  width: 100%;
+  height: 145px;
+  overflow: hidden;
+  background: #f7eeee;
+}
+
+.projectImage img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.projectCard > small {
+  display: block;
+  color: #df6c8c;
+  font-size: 9px;
+  margin-top: 14px;
+}
+
+.projectCard h3 {
+  font-family: "Caveat", cursive;
+  font-size: 26px;
+  margin-top: 5px;
+}
+
+.projectCard p {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+  margin-top: 7px;
+}
+
+.projectCard label {
+  display: inline-block;
+  margin-top: 12px;
+  background: #ffe4eb;
+  color: #d65a80;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 8px;
+}
+
+.projectCard button {
+  float: right;
+  margin-top: 9px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0;
+  background: #ec7194;
+  color: white;
+  cursor: pointer;
+}
+
+/* T-SHIRT */
+
+.tshirt {
+  padding: 110px 6%;
+  background: #ffe8ee;
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.dark .tshirt {
+  background: #292125;
+}
+
+.shirtInfo p {
+  color: #76676e;
+  line-height: 1.7;
+  font-size: 13px;
+  margin: 20px 0;
+  max-width: 400px;
+}
+
+.dark .shirtInfo p {
+  color: #cdbdc2;
+}
+
+.shirtInfo a {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 25px;
+  background: #df6187;
+  color: white;
+  font-size: 11px;
+}
+
+/* TWO LARGE T-SHIRT SPACES */
+
+.shirtGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px;
+  width: 100%;
+}
+
+.shirtCard {
+  background: white;
+  padding: 15px;
+  position: relative;
+  min-height: 430px;
+  width: 100%;
+  transform: rotate(-2deg);
+  box-shadow: 5px 8px 0 rgba(210, 150, 170, 0.25);
+}
+
+.shirtCard:nth-child(2) {
+  transform: rotate(2deg);
+  margin-top: 35px;
+}
+
+.shirtCard img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+}
+
+.shirtCard span {
+  position: absolute;
+  top: 7px;
+  right: 9px;
+  color: #e5658b;
+  font-size: 20px;
+}
+
+/* EDUCATION */
+
+.education {
+  background: var(--paper);
+}
+
+.educationRow {
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.eduCard {
+  width: 30%;
+  min-height: 170px;
+  background: #fff4f7;
+  border: 1px dashed #e2a1b4;
+  padding: 22px;
+  transform: rotate(-1deg);
+}
+
+.dark .eduCard {
+  background: #2a2528;
+}
+
+.eduCard:nth-child(3) {
+  transform: rotate(1deg);
+}
+
+.eduCard b {
+  color: #e26388;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.eduCard h3 {
+  font-family: "Caveat", cursive;
+  font-size: 27px;
+  margin-top: 15px;
+}
+
+.eduCard p {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+.educationRow > i {
+  color: #e76b91;
+  font-style: normal;
+  font-size: 25px;
+}
+
+/* CONTACT */
+
+.contact {
+  padding: 90px 8%;
+  background: #191619;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.contactText h2 {
+  font-size: 70px;
+}
+
+.contactText > p {
+  color: #bdb0b5;
+  max-width: 450px;
+  line-height: 1.7;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.contactDetails {
+  margin-top: 25px;
+}
+
+.contactDetails p {
+  color: #ff9ab7;
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+form {
+  background: #fff8f5;
+  color: #272126;
+  padding: 25px;
+  transform: rotate(1deg);
+  box-shadow: 8px 10px 0 #4a3b42;
+}
+
+.formTitle {
+  font-family: "Caveat", cursive;
+  color: #df5d83;
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formInputs input,
+.formInputs textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px dashed #d7bfc7;
+  background: transparent;
+  padding: 12px 5px;
+  outline: none;
+  font-size: 11px;
+}
+
+.formInputs textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+form button {
+  margin-top: 18px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 25px;
+  background: #df6288;
+  color: white;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.success {
+  color: #42a56d;
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  min-height: 150px;
+  background: #110f11;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 8%;
+}
+
+.footerName {
+  font-family: "Caveat", cursive;
+  color: #ff86aa;
+  font-size: 38px;
+}
+
+.footerMiddle {
+  text-align: center;
+}
+
+.footerMiddle small {
+  color: #998a90;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.footerMiddle h3 {
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+.footerRight {
+  color: #8f8288;
+  font-size: 9px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+  .sidebar {
+    display: none;
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  .mobileLogo {
+    display: block;
+    margin-right: auto;
+    font-family: "Caveat", cursive;
+    color: #df5d83;
+    font-size: 30px;
+  }
+
+  .navbar {
+    padding: 0 25px;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+
+  .navbar nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--paper);
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .navbar nav.navOpen {
+    display: flex;
+  }
+
+  .hero {
+    padding: 60px 6%;
+  }
+
+  .skillBoard {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .heroText {
+    width: 100%;
+  }
+
+  .heroText h1 span {
+    margin-left: 0;
+  }
+
+  .heroButtons {
+    justify-content: center;
+  }
+
+  .photoArea {
+    width: 100%;
+  }
+
+  .aboutContent,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  /* T-SHIRT MOBILE */
+
+  .tshirt {
+    grid-template-columns: 1fr;
+    padding: 80px 6%;
+  }
+
+  .shirtGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .shirtCard {
+    min-height: 350px;
+  }
+
+  .shirtCard img {
+    height: 320px;
+  }
+
+  .skillBoard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .educationRow {
+    flex-direction: column;
+  }
+
+  .eduCard {
+    width: 100%;
+  }
+
+  .educationRow > i {
+    transform: rotate(90deg);
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .heroText h1 {
+    font-size: 57px;
+  }
+
+  .heroIntro {
+    font-size: 12px;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heroButtons a {
+    width: 190px;
+  }
+
+  .photoFrame {
+    width: 225px;
+    height: 285px;
+  }
+
+  .flowerLeft {
+    left: 0;
+  }
+
+  .flowerRight {
+    right: 0;
+  }
+
+  .dreamText {
+    right: -5px;
+  }
+
+  .section,
+  .skills,
+  .tshirt,
+  .contact {
+    padding: 65px 20px;
+  }
+
+  .sectionTitle h2,
+  .shirtInfo h2 {
+    font-size: 48px;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .skillBoard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .personalityItems {
+    grid-template-columns: 1fr;
+  }
+
+  /* SMALL SCREEN T-SHIRT */
+
+  .shirtGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .shirtCard:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .shirtCard {
+    min-height: 400px;
+  }
+
+  .shirtCard img {
+    height: 370px;
+  }
+
+  .contactText h2 {
+    font-size: 58px;
+  }
+
+  form {
+    transform: none;
+  }
+}
